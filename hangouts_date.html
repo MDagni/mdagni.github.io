@@ -1,0 +1,19 @@
+﻿<script language="javascript">
+function getParameterByName(name, url) {
+    if (!url) url = window.location.href;
+    name = name.replace(/[\[\]]/g, '\\$&');
+    var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+        results = regex.exec(url);
+    if (!results) return null;
+    if (!results[2]) return '';
+    return decodeURIComponent(results[2].replace(/\+/g, ' '));
+}
+
+var year = getParameterByName('year');
+var monthday = getParameterByName('monthday');
+var month = monthday.substring(0, 2);
+var day = monthday.substring(2, 4);
+var url = "https://mail.google.com/mail/u/1/#search/in%3Achats++after%3A" + year + "%2F" + month + "%2F" + day + "+before%3A" + year + "%2F" + month + "%2F" + (parseInt(day)+1);
+//document.write(url);
+location.href = url;
+</script>
