@@ -1,21 +1,21 @@
 <script>
 // file:///D:/OneDrive/Public/popup.html?url=https://chat.google.com/u/1/&name=chatWindow&options=width=1920,height=1080,left=0,top=0
 var params = new URL(window.location.href);
-var url = params.searchParams.get("url");
-var name = params.searchParams.get("name");
-var options = params.searchParams.get("options");
-console.log(url);
-console.log(name);
-console.log(options);
-var myWindow = window.open(url,name,options);
+var newurl = params.searchParams.get("url");
+var newname = params.searchParams.get("name");
+var newoptions = params.searchParams.get("options");
+console.log(newurl);
+console.log(newname);
+console.log(newoptions);
+var myWindow = window.open(newurl,newname,newoptions);
 if (myWindow!=null) {
   window.close();
 } else {
   document.write("Popup açılamadı");
   document.write("<pre>");
-  document.write("url="+url+"\n");
-  document.write("name="+name+"\n");
-  document.write("options	="+options+"\n");
+  document.write("url="+newurl+"\n");
+  document.write("name="+newname+"\n");
+  document.write("options="+newoptions+"\n");
   document.write("</pre>");
 }
 </script>
