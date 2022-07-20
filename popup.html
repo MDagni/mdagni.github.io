@@ -4,18 +4,23 @@ var params = new URL(window.location.href);
 var newurl = params.searchParams.get("url");
 var newname = params.searchParams.get("name");
 var newoptions = params.searchParams.get("options");
-console.log(newurl);
-console.log(newname);
-console.log(newoptions);
-var myWindow = window.open(newurl,newname,newoptions);
-if (myWindow!=null) {
-  window.close();
+console.log("url="+newurl);
+console.log("name="+newname);
+console.log("options="+newoptions);
+
+if (newurl!=null) {
+  var newWindow = window.open(newurl,newname,newoptions);
+  if (newWindow!=null) {
+    window.open('popup.html', '_self').close();
+  } else {
+    document.write("Popup açılamadı");
+    document.write("<pre>");
+    document.write("url="+newurl+"\n");
+    document.write("name="+newname+"\n");
+    document.write("options="+newoptions+"\n");
+    document.write("</pre>");
+  }
 } else {
-  document.write("Popup açılamadı");
-  document.write("<pre>");
-  document.write("url="+newurl+"\n");
-  document.write("name="+newname+"\n");
-  document.write("options="+newoptions+"\n");
-  document.write("</pre>");
+  document.write("url parametresi yok");
 }
 </script>
