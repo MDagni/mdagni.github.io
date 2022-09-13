@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<!-- file:///D:/OneDrive/Public/splitview.html?title=Yapılacaklar&left=https%3A%2F%2Fdocs.google.com%2Fspreadsheets%2Fd%2F1MMbxeEH6dgB6G95VWhb_qlpB5ake3oFR4gAmIjmraUc%2Fedit%23gid%3D1018591798&right=https%3A%2F%2Fdocs.google.com%2Fspreadsheets%2Fd%2F1MMbxeEH6dgB6G95VWhb_qlpB5ake3oFR4gAmIjmraUc%2Fedit%23gid%3D0
+-->
+
+<script>
+window.onload = function() {
+	var params = new URL(window.location.href);
+	var newtitle = params.searchParams.get("title");
+	var lefturl = params.searchParams.get("left");
+	var righturl = params.searchParams.get("right");
+	document.title=newtitle;
+	window.frames[0].location = lefturl;
+	window.frames[1].location = righturl;
+}
+</script>
+ 
+   <head>
+      <meta charset="utf-8">
+      <title></title>
+      <link rel="icon" type="image/x-icon" href="https://ssl.gstatic.com/docs/spreadsheets/favicon3.ico">
+   </head>
+   
+   <frameset cols="50%,50%">
+      <frame name="left" src="" />
+      <frame name="right"  src="" />
+   </frameset>
+   
+</html>
