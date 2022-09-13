@@ -11,6 +11,9 @@ window.onload = function() {
 	var newtitle = params.searchParams.get("title");
 	var lefturl = params.searchParams.get("left");
 	var righturl = params.searchParams.get("right");
+	console.log(newtitle);
+	console.log(lefturl);
+	console.log(righturl);
 	document.title=newtitle;
 	window.frames[0].location = lefturl;
 	window.frames[1].location = righturl;
