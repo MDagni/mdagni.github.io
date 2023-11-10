@@ -1,0 +1,18 @@
+<!--
+https://me.sap.com/mynotes?tab=Search&sortBy=ReleasedOn&filters=fuzzyThreshold%25253Aeq~'exact'&q=%s
+-->
+
+<script>
+// file:///D:/OneDrive/Public/sapnotes.html?search="Protect variant"
+var myurl = new URL(window.location.href);
+var search = myurl.searchParams.get("search");
+console.log("search="+search);
+
+if (search!=null) {
+  var newurl = "https://me.sap.com/mynotes?tab=Search&sortBy=ReleasedOn&filters=fuzzyThreshold%25253Aeq~'exact'&q=" + encodeURIComponent(search.replace(/\+/g,' '));
+  console.log("newurl="+newurl);
+  window.location = newurl;
+} else {
+  document.write("Search parametresi zorunludur");
+}
+</script>
