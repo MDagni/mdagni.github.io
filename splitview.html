@@ -8,22 +8,24 @@ file:///D:/OneDrive/Public/splitview.html?title=Deneme&left=https%3A%2F%2Fwww.go
 
 <script>
 window.onload = function() {
-	var params = new URL(window.location.href);
-	var newtitle = params.searchParams.get("title");
-	var lefturl = params.searchParams.get("left");
-	var righturl = params.searchParams.get("right");
+	var params = new URL(window.location.href).searchParams;
+	var newtitle = params.get("title");
+	var lefturl = params.get("left");
+	var righturl = params.get("right");
+	
 	console.log(newtitle);
 	console.log(lefturl);
 	console.log(righturl);
 	document.title=newtitle;
-	window.frames[0].location = lefturl;
-	window.frames[1].location = righturl;
 	
 	var link = document.createElement('link');
 	link.type = 'image/x-icon';
 	link.rel = 'icon';
 	link.href = 'https://www.google.com/s2/favicons?domain=' + lefturl;
 	document.getElementsByTagName('head')[0].appendChild(link);
+
+	window.frames[0].location = lefturl;
+	window.frames[1].location = righturl;
 }
 </script>
  
