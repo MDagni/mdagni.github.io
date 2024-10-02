@@ -24,6 +24,8 @@ window.onload = function() {
 	//link.href = 'https://www.google.com/s2/favicons?domain=' + lefturl;
 	link.href = 'https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&size=16&url=' + lefturl;
 	document.getElementsByTagName('head')[0].appendChild(link);
+	
+	console.log(link.href);
 
 	window.frames[0].location = lefturl;
 	window.frames[1].location = righturl;
