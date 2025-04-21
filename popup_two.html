@@ -1,0 +1,25 @@
+<script>
+// file:///D:/OneDrive/Public/popup_two.html?url1=https%3A%2F%2Fowa.ulker.com.tr%2Fowa%2F%23path%3D%2Fcalendar%2Fview%2FWeek&url2=https%3A%2F%2Fcalendar.google.com%2Fcalendar%2Fb%2F1%2Fr
+
+var params = new URL(window.location.href);
+var url1 = params.searchParams.get("url1");
+var url2 = params.searchParams.get("url2");
+console.log("url1="+url1);
+console.log("url2="+url2);
+
+if (url1!=null) {
+  var newWindow = window.open(url1,"popup1","width=870,height=1080,left=0,top=0");
+  var newWindow = window.open(url2,"popup2","width=870,height=1080,left=890,top=0");
+  if (newWindow!=null) {
+    window.open('popup_two.html', '_self').close();
+  } else {
+    document.write("Popup açılamadı");
+    document.write("<pre>");
+    document.write("url1="+url1+"\n");
+    document.write("url2="+url2+"\n");
+    document.write("</pre>");
+  }
+} else {
+  document.write("Lütfen bu pencereyi kapatınız");
+}
+</script>
