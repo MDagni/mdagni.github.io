@@ -10,7 +10,7 @@ var search = myurl.searchParams.get("search");
 console.log("search="+search);
 
 if (search!=null) {
-  var newurl = "https://me.sap.com/mynotes/expertsearch/%7B%22searchTerm%22%3A%22" + encodeURIComponent(search.replace(/\+/g,' ').replaceAll('"','\\"')) + "%22%2C%22fuzzyThreshold%22%3A%22exact%22%2C%22orderBy%22%3A%22ReleasedOn%22%7D";
+  var newurl = "https://me.sap.com/mynotes/search/%7B%22searchTerm%22%3A%22" + encodeURIComponent(search.replace(/\+/g,' ').replaceAll('"','\\"')) + "%22%2C%22fuzzyThreshold%22%3A%22exact%22%2C%22orderBy%22%3A%22ReleasedOn%22%7D";
   console.log("newurl="+newurl);
   window.location = newurl;
 } else {
