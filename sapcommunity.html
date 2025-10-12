@@ -1,20 +1,31 @@
 <!--
-https://community.sap.com/search/?ct=all&searchReferrer=contextual_navigation_development&q=%s
-file:///D:/OneDrive/Public/sapcommunity.html?search="Protect+variant"
-https://mdagni.github.io/sapcommunity.html?search="Protect+variant"
+file:///D:/OneDrive/Public/sapcommunity.html?search=Protect variant
+https://mdagni.github.io/sapcommunity.html?search=Protect variant
 -->
 
 <script>
 
 var myurl = new URL(window.location.href);
 var search = myurl.searchParams.get("search");
-console.log("search="+search);
+console.log("search=" + search);
 
-if (search!=null) {
-  var newurl = "https://community.sap.com/search/?ct=all&searchReferrer=contextual_navigation_development&q=" + encodeURIComponent(search.replace(/\+/g,' '));
-  console.log("newurl="+newurl);
-  window.location = newurl;
+if (search != null) {
+    search = search.replace(/\+/g, ' ').replaceAll('"', '\"');
+
+	if (!search.includes('"')) {
+		search = search
+			.split(" ") // kelimelere ayır
+			.map(word => "+" + word) // her kelimenin başına "+" ekle
+			.join(" "); // tekrar birleştir
+	}
+
+	console.log("search=" + search);
+
+	var newurl = "https://community.sap.com/t5/forums/searchpage/tab/message?q=" + encodeURIComponent(search) + "&noSynonym=false&collapse_discussion=true";
+	console.log("newurl=" + newurl);
+	window.location = newurl;
 } else {
-  document.write("Search parametresi zorunludur");
+	document.write("Search parametresi zorunludur");
 }
+
 </script>
