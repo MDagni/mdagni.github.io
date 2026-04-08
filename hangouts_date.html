@@ -1,5 +1,6 @@
 <script language="javascript">
-// file:///D:/OneDrive/Public/hangouts_date.html?year=2024&monthday=0723
+// file:///D:/OneDrive/Public/hangouts_date.html?year=2026&monthday=0330
+// https://chat.google.com/u/1/app/search?q=&cfrom=mehmet.dagnilak@alfayazilim.com&cdateoption=custom&cdatestart=2026-3-30&cdateend=2026-3-31&csortop=1
 
 function getParameterByName(name, url) {
     if (!url) url = window.location.href;
@@ -15,8 +16,8 @@ var year = getParameterByName('year');
 var monthday = getParameterByName('monthday');
 var month = monthday.substring(0, 2);
 var day = monthday.substring(2, 4);
-var url = "https://mail.google.com/chat/u/1/#search/*/cfrom=mehmet.dagnilak@alfayazilim.com&cdateoption=custom&cdatestart="+year+"-"+month+"-"+day+"&cdateend="+year+"-"+month+"-"+(parseInt(day)+1)+"&csortop=1&cmembership=2";
+var url = "https://chat.google.com/u/1/app/search?q=&cfrom=mehmet.dagnilak@alfayazilim.com&cdateoption=custom&cdatestart="+year+"-"+month+"-"+day+"&cdateend="+year+"-"+month+"-"+(parseInt(day)+1)+"&csortop=1";
 console.log(url);
 location.href = url;
 </script>
-Kullanım: https://mdagni.github.io/hangouts_date.html?year=2024&monthday=0723
+Kullanım: https://mdagni.github.io/hangouts_date.html?year=2026&monthday=0330
